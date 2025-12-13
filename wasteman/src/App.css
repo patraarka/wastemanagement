@@ -1,2 +1,20 @@
 @import "tailwindcss";
 
+@keyframes slideshow {
+  0% { opacity: 1; transform: scale(1); }
+  12.5% { opacity: 1; transform: scale(1.05); } /* Image 1 visible */
+  25% { opacity: 0; transform: scale(1); }
+  25.01% { opacity: 0; } /* Switch to next image (hidden) */
+  37.5% { opacity: 1; transform: scale(1.05); } /* Image 2 visible */
+  50% { opacity: 0; transform: scale(1); }
+  50.01% { opacity: 0; } /* Switch to next image (hidden) */
+  62.5% { opacity: 1; transform: scale(1.05); } /* Image 3 visible */
+  75% { opacity: 0; transform: scale(1); }
+  75.01% { opacity: 0; } /* Switch to next image (hidden) */
+  87.5% { opacity: 1; transform: scale(1.05); } /* Image 4 visible */
+  100% { opacity: 0; transform: scale(1); } /* Back to first state for loop */
+}
+
+.animate-slideshow {
+  animation: slideshow 16s infinite; /* 16 seconds total duration (4 images * 4s each) */
+}
